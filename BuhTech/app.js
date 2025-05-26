@@ -187,40 +187,174 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Получаем элементы
-const loginBtn = document.querySelector('.auth-button:not(.register-button)');
-const registerBtn = document.querySelector('.register-button');
-const loginModal = document.getElementById('loginModal');
-const registerModal = document.getElementById('registerModal');
-const closeBtns = document.querySelectorAll('.close');
+// Модальные окна
+document.addEventListener('DOMContentLoaded', function() {
+  // Открытие модальных окон
+  document.querySelectorAll('[data-modal-open]').forEach(button => {
+    button.addEventListener('click', function() {
+      const modalId = this.getAttribute('data-modal-open');
+      const modal = document.getElementById(modalId);
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
 
-// Открытие модальных окон
-loginBtn.addEventListener('click', () => loginModal.classList.toggle("active"));
-registerBtn.addEventListener('click', () => registerModal.classList.toggle("active"));
+  // Закрытие модальных окон
+  document.querySelectorAll('.close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', function() {
+      this.closest('.modal').classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
 
-// Закрытие модальных окон
-closeBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    loginModal.classList.remove("active");
-    registerModal.classList.remove("active");
+  // Закрытие при клике вне модального окна
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Переключение между модальными окнами
+  document.querySelectorAll('.switch-modal').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const currentModal = this.closest('.modal');
+      const targetModalId = this.getAttribute('data-modal');
+      
+      currentModal.classList.remove('active');
+      document.getElementById(targetModalId).classList.add('active');
+    });
+  });
+
+  // Валидация форм
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Здесь можно добавить логику входа
+    alert('Вход выполнен!');
+    this.closest('.modal').classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  document.getElementById('registerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const password = document.getElementById('regPassword').value;
+    const repeatPassword = document.getElementById('regRepeatPassword').value;
+    
+    if (password !== repeatPassword) {
+      this.classList.add('shake');
+      alert('Пароли не совпадают!');
+      setTimeout(() => this.classList.remove('shake'), 500);
+      return;
+    }
+    
+    // Здесь можно добавить логику регистрации
+    alert('Регистрация успешна!');
+    this.closest('.modal').classList.remove('active');
+    document.body.style.overflow = '';
   });
 });
 
-// Закрытие при клике вне окна
-window.addEventListener('click', (e) => {
-  if (e.target === loginModal) loginModal.classList.remove("active");
-  if (e.target === registerModal) registerModal.classList.remove("active");
-});
+  // Открытие модального окна
+  document.getElementById('openModalBtn').onclick = function() {
+    document.getElementById('requestModal').classList.add('active');
+  };
 
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-  const loginInput = document.getElementById('loginEmail').value;
-  // Если введён email, проверяем на наличие @
-  if (loginInput.includes('@') && !loginInput.match(/^\+?[0-9\s\-\(\)]+$/)) {
-    if (!loginInput.includes('@')) {
-      alert('Пожалуйста, введите корректный email-адрес (должен содержать символ @)');
-      e.preventDefault();
-      return false;
+  // Закрытие модального окна
+  document.getElementById('closeModalBtn').onclick = function() {
+    document.getElementById('requestModal').classList.remove('active');
+  };
+
+  // Закрытие по клику вне окна
+  window.onclick = function(event) {
+    const modal = document.getElementById('requestModal');
+    if (event.target === modal) {
+      modal.classList.remove('active');
     }
-  }
-  // Если введён телефон, дополнительных проверок нет (можно добавить при необходимости)
-});
+  };
+  
+
+    // Корзина (front-end)
+    let cart = [];
+
+    // Добавление в корзину
+    document.querySelectorAll('.add-to-cart-btn').forEach((btn, idx) => {
+      btn.addEventListener('click', function() {
+        const card = btn.closest('.tariff-card');
+        const title = card.querySelector('.tariff-name').textContent.trim();
+        const price = card.querySelector('.price-value').textContent.trim();
+        // Проверка на дублирование тарифа в корзине
+        if (!cart.find(item => item.title === title)) {
+          cart.push({ title, price });
+          updateCartCount();
+        }
+        showCartMessage(title + " добавлен в корзину!");
+      });
+    });
+  
+    // Обновление счетчика корзины
+    function updateCartCount() {
+      document.getElementById('cartCount').textContent = cart.length;
+    }
+  
+    // Открытие корзины
+    document.getElementById('cartBtn').onclick = function() {
+      renderCart();
+      document.getElementById('cartModal').classList.add('active');
+    };
+  
+    // Закрытие корзины
+    document.getElementById('closeCartModal').onclick = function() {
+      document.getElementById('cartModal').classList.remove('active');
+    };
+  
+    // Клик вне модального окна
+    window.addEventListener('click', function(event) {
+      const modal = document.getElementById('cartModal');
+      if (event.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+  
+    // Отображение содержимого корзины
+    function renderCart() {
+      const cartItems = document.getElementById('cartItems');
+      if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Ваша корзина пуста.</p>";
+        return;
+      }
+      cartItems.innerHTML = cart.map((item, i) => `
+        <div class="cart-item">
+          <span>${item.title} — <b>${item.price}</b></span>
+          <button class="remove-cart-item" data-idx="${i}">✕</button>
+        </div>
+      `).join('');
+      // Добавить обработчики для удаления
+      cartItems.querySelectorAll('.remove-cart-item').forEach(btn => {
+        btn.onclick = function() {
+          cart.splice(btn.dataset.idx, 1);
+          updateCartCount();
+          renderCart();
+        };
+      });
+    }
+  
+    // Оформить заказ (заглушка)
+    document.getElementById('checkoutBtn').onclick = function() {
+      if (cart.length === 0) return;
+      document.getElementById('cartItems').innerHTML = "<p>Спасибо за заказ! Мы свяжемся с вами для уточнения деталей.</p>";
+      cart = [];
+      updateCartCount();
+    };
+  
+    // Сообщение при добавлении в корзину
+    function showCartMessage(text) {
+      let msg = document.createElement('div');
+      msg.className = 'success-message active';
+      msg.style.top = "70px";
+      msg.textContent = text;
+      document.body.appendChild(msg);
+      setTimeout(() => { msg.remove(); }, 2000);
+    }
