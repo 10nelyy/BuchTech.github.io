@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Услуги - BuchTech</title>
+</head>
+
+<body>
+        <div class="header">
+          <div class="header-left">
+            <div class="nav-main">
+              <a href="/" class="nav-item home">Главная</a>
+              <a href="about.html" class="nav-item">О нас</a>
+              <a href="services.html" class="nav-item">Услуги</a>
+            </div>
+            <div class="nav-secondary">
+              <a href="news.html" class="nav-item">Новости</a>
+              <a href="reviews.html" class="nav-item">Отзывы</a>
+              <a href="contacts.html" class="nav-item">Контакты</a>
+            </div>
+          </div>
+          <div class="header-right">
+            <div class="auth-buttons">
+              <button class="auth-button" data-modal-open="loginModal">
+                Войти
+              </button>
+              <button class="auth-button register-button" data-modal-open="registerModal">
+                Зарегистрироваться
+              </button>
+            </div>
+            <img src="./assets/кругляш.png" class="callback-icon" />
+            <a href="callback.html" class="callback-link">Обратный звонок</a>
+    
+            <div class="cart-icon-block">
+              <button id="cartBtn" class="cart-btn">
+                <img src="./assets/cart.gif" alt="cart" class="cart-icon" />
+                <span id="cartCount" class="cart-count">0</span>
+              </button>
+            </div>
+          </div>
+        </div>
+  <div class="content-wrap">
+    <div class="main-content">
+      <div class="top-row">
+        <div class="logo-block">
+          <img src="./assets/logo.png" class="logo-img" />
+          <div class="logo-text">
+            <p class="logo-title">BuchTech</p>
+            <p class="logo-subtitle">Бухгалтерские услуги</p>
+          </div>
+        </div>
+
+        <div class="contacts-block">
+          <a href="tel:+70000000000" class="phone">+7 (000) 000-00-00</a>
+          <div class="social-icons">
+            <div class="social-icon">
+              <img src="./assets/tg.png" alt="Telegram" />
+            </div>
+            <div class="social-icon whatsapp">
+              <img src="./assets/whatsapp.png" alt="WhatsApp" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-page">
+        <h1 class="section-title">Наши услуги</h1>
+        
+        <div class="services-cards">
+          <!-- Карточка бухгалтерского учета -->
+          <div class="service-card" id="accounting">
+            <div class="card-header">
+              <h2>Бухгалтерский учет</h2>
+              <div class="price-badge">от 3 000₽/мес</div>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Полное ведение бухгалтерии</li>
+                <li>Восстановление учета</li>
+                <li>Постановка бухгалтерского учета</li>
+                <li>Нулевая отчетность</li>
+              </ul>
+              <div class="card-footer">
+                <button class="card-button">Заказать</button>
+                <button class="card-button secondary">Подробнее</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Карточка налогового учета -->
+          <div class="service-card" id="tax">
+            <div class="card-header">
+              <h2>Налоговый учет</h2>
+              <div class="price-badge">от 5 000₽/мес</div>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Налоговое планирование</li>
+                <li>Оптимизация налогов</li>
+                <li>Возмещение НДС</li>
+                <li>Камеральные проверки</li>
+              </ul>
+              <div class="card-footer">
+                <button class="card-button">Заказать</button>
+                <button class="card-button secondary">Подробнее</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Карточка кадрового учета -->
+          <div class="service-card" id="hr">
+            <div class="card-header">
+              <h2>Кадровый учет</h2>
+              <div class="price-badge">от 4 000₽/мес</div>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Ведение кадрового делопроизводства</li>
+                <li>Расчет зарплаты</li>
+                <li>Отчетность в фонды</li>
+                <li>Кадровый аудит</li>
+              </ul>
+              <div class="card-footer">
+                <button class="card-button">Заказать</button>
+                <button class="card-button secondary">Подробнее</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Остальной контент остается без изменений -->
+        <div class="consultation-block">
+          <h2>Нужна консультация?</h2>
+          <p>Оставьте заявку и наш специалист свяжется с вами для бесплатной консультации</p>
+          <div class="consultation-button-wrapper">
+            <button class="main-button" id="openModalBtn">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-block">
+        <p class="footer-text">© 2025 BuhTech</p>
+        <div class="footer-social">
+          <p class="footer-text">Мы в соцсетях:</p>
+          <div class="social-icons">
+            <img src="./assets/vk.png" alt="Соцсеть 1" class="social-icon" />
+            <img src="./assets/tg2.png" alt="Соцсеть 2" class="social-icon" />
+            <img src="./assets/whatsapp2.png" alt="Соцсеть 3" class="social-icon" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-block">
+        <p class="footer-text">
+          г. Альметьевск, ул. Мира, 10<br />
+          <span class="work-hours">Пн-Пт: 09:00-17:00<br />Сб: 11:00-15:00</span>
+        </p>
+      </div>
+
+      <div class="footer-block">
+        <p class="footer-text">
+          Техподдержка:<br />
+          <span class="footer-phone">+7 (000) 000-00-00</span>
+        </p>
+        <a href="index.html" class="back-to-top">
+          <span>Наверх</span>
+          <svg viewBox="0 0 20 20" fill="#39295a">
+            <path d="M10,5l8.66,7.5h-17.32z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div class="bg-elements">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-circle bg-circle-3"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

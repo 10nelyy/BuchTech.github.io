@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакты - BuchTech</title>
+</head>
+
+<body>
+  <!-- Шапка (такая же как в index.html) -->
+  <!-- ... -->
+
+  <div class="content-wrap">
+    <div class="main-content">
+      <div class="top-row">
+        <div class="logo-block">
+          <img src="./assets/logo.png" class="logo-img" />
+          <div class="logo-text">
+            <p class="logo-title">BuchTech</p>
+            <p class="logo-subtitle">Бухгалтерские услуги</p>
+          </div>
+        </div>
+
+        <div class="contacts-block">
+          <a href="tel:+70000000000" class="phone">+7 (000) 000-00-00</a>
+          <div class="social-icons">
+            <div class="social-icon">
+              <img src="./assets/tg.png" alt="Telegram" />
+            </div>
+            <div class="social-icon whatsapp">
+              <img src="./assets/whatsapp.png" alt="WhatsApp" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contacts-page">
+        <h1 class="section-title">Контакты</h1>
+        
+        <div class="contacts-container">
+          <div class="contact-info">
+            <h2>Наши контакты</h2>
+            <div class="contact-item">
+              <img src="./assets/phone-icon.png" alt="Телефон">
+              <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+            </div>
+            <div class="contact-item">
+              <img src="./assets/email-icon.png" alt="Email">
+              <a href="mailto:info@buchtech.ru">info@buchtech.ru</a>
+            </div>
+            <div class="contact-item">
+              <img src="./assets/location-icon.png" alt="Адрес">
+              <p>г. Альметьевск, ул. Мира, 10, офис 305</p>
+            </div>
+            <div class="contact-item">
+              <img src="./assets/time-icon.png" alt="Время работы">
+              <p>Пн-Пт: 09:00-18:00<br>Сб: 10:00-15:00</p>
+            </div>
+            
+            <h3>Мы в соцсетях</h3>
+            <div class="social-links">
+              <a href="#"><img src="./assets/vk.png" alt="VK"></a>
+              <a href="#"><img src="./assets/tg2.png" alt="Telegram"></a>
+              <a href="#"><img src="./assets/whatsapp2.png" alt="WhatsApp"></a>
+            </div>
+          </div>
+          
+          <div class="contact-map">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=..." width="100%" height="100%" frameborder="0"></iframe>
+          </div>
+        </div>
+        
+        <div class="contact-form-section">
+          <h2>Напишите нам</h2>
+          <form class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Ваше имя</label>
+                <input type="text" id="contact-name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Телефон</label>
+                <input type="tel" id="contact-phone" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email">
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Сообщение</label>
+              <textarea id="contact-message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="main-button">Отправить сообщение</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-block">
+        <p class="footer-text">© 2025 BuhTech</p>
+        <div class="footer-social">
+          <p class="footer-text">Мы в соцсетях:</p>
+          <div class="social-icons">
+            <img src="./assets/vk.png" alt="Соцсеть 1" class="social-icon" />
+            <img src="./assets/tg2.png" alt="Соцсеть 2" class="social-icon" />
+            <img src="./assets/whatsapp2.png" alt="Соцсеть 3" class="social-icon" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-block">
+        <p class="footer-text">
+          г. Альметьевск, ул. Мира, 10<br />
+          <span class="work-hours">Пн-Пт: 09:00-17:00<br />Сб: 11:00-15:00</span>
+        </p>
+      </div>
+
+      <div class="footer-block">
+        <p class="footer-text">
+          Техподдержка:<br />
+          <span class="footer-phone">+7 (000) 000-00-00</span>
+        </p>
+        <a href="index.html" class="back-to-top">
+          <span>Наверх</span>
+          <svg viewBox="0 0 20 20" fill="#39295a">
+            <path d="M10,5l8.66,7.5h-17.32z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div class="bg-elements">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-circle bg-circle-3"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

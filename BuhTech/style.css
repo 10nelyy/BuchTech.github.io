@@ -489,7 +489,7 @@ body::before {
 .cart-icon-block {
   position: fixed;
   top: 12px;
-  right: 140px;
+  right: 150px;
   z-index: 1200;
 }
 
@@ -1756,8 +1756,233 @@ a {
   transform: scaleX(1);
 }
 
+/* Стили для страницы "О нас" */
+.about-section {
+  padding: 40px 0;
+}
 
-/* Mobile styles (up to 768px) */
+.section-title {
+  font-size: 48px;
+  color: #39295a;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 32px;
+  color: #39295a;
+  margin: 30px 0 15px;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.values-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.values-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.values-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #98db03;
+  font-weight: bold;
+}
+
+.achievements {
+  background: #f8f8f8;
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.achievements h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.achievement-item {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.achievement-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #98db03;
+  margin-bottom: 10px;
+}
+
+.achievement-text {
+  font-size: 18px;
+  color: #5e5179;
+}
+
+
+/* Стили для выпадающего меню */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  border-radius: 8px;
+  padding: 10px 0;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-arrow {
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+/* Стили для карточек услуг */
+.services-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.card-header {
+  background: #39295a;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.price-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ff6b00;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body ul {
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+.card-body li {
+  margin-bottom: 10px;
+}
+
+.card-footer {
+  display: flex;
+  gap: 10px;
+  padding: 0 20px 20px;
+}
+
+.card-button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-button {
+  background: #39295a;
+  color: white;
+}
+
+.card-button.secondary {
+  background: #f0f0f0;
+  color: #39295a;
+}
+
+.card-button:hover {
+  background: #2a1d42;
+}
+
+.card-button.secondary:hover {
+  background: #e0e0e0;
+}
+
+/* Адаптация для мобильных */
+
 @media (max-width: 768px) {
 
   /* Header */
@@ -1804,6 +2029,27 @@ a {
   .callback-link {
     margin-left: 0;
   }
+
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .section-title {
+    font-size: 36px;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .achievement-number {
+    font-size: 36px;
+  }
+  
+  .achievement-text {
+    font-size: 16px;
+  }
+
 
   /* Стили для модальных окон на мобильных */
   .modal-content {
