@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Услуги - BuchTech</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div class="nav-main">
+          <a href="index.html" class="nav-item">Главная</a>
+          <div class="nav-item dropdown">
+            <a href="services.html" class="nav-item active"
+              >Услуги <span class="dropdown-arrow">▼</span></a
+            >
+            <div class="dropdown-content">
+              <a href="services.html#accounting">Бухгалтерский учет</a>
+              <a href="services.html#tax">Налоговый учет</a>
+              <a href="services.html#hr">Кадровый учет</a>
+              <a href="services.html#reporting">Сдача отчетности</a>
+              <a href="services.html#consulting">Консалтинг</a>
+              <a href="services.html#recovery">Восстановление учета</a>
+            </div>
+          </div>
+          <a href="about.html" class="nav-item">О нас</a>
+        </div>
+        <div class="nav-secondary">
+          <a href="news.html" class="nav-item">Новости</a>
+          <a href="reviews.html" class="nav-item">Отзывы</a>
+          <a href="contacts.html" class="nav-item">Контакты</a>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="auth-buttons">
+          <button class="auth-button" data-modal-open="loginModal">
+            Войти
+          </button>
+          <button
+            class="auth-button register-button"
+            data-modal-open="registerModal"
+          >
+            Зарегистрироваться
+          </button>
+        </div>
+        <img src="./assets/кругляш.png" class="callback-icon" />
+        <a href="callback.html" class="callback-link">Обратный звонок</a>
+        <div class="cart-icon-block">
+          <button id="cartBtn" class="cart-btn">
+            <img src="./assets/cart.svg" alt="cart" class="cart-icon" />
+            <span id="cartCount" class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-wrap">
+      <div class="main-content">
+        <div class="top-row">
+          <div class="logo-block">
+            <img src="./assets/logo.png" class="logo-img" />
+            <div class="logo-text">
+              <p class="logo-title">BuchTech</p>
+              <p class="logo-subtitle">Бухгалтерские услуги</p>
+            </div>
+          </div>
+          <div class="contacts-block">
+            <a href="tel:+70000000000" class="phone">+7 (000) 000-00-00</a>
+            <div class="social-icons">
+              <div class="social-icon">
+                <img src="./assets/tg.png" alt="Telegram" />
+              </div>
+              <div class="social-icon whatsapp">
+                <img src="./assets/whatsapp.png" alt="WhatsApp" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-page">
+          <h1 class="section-title">Наши услуги</h1>
+
+          <div class="services-cards">
+            <!-- Бухгалтерский учет -->
+            <div class="service-card">
+              <div class="card-header">
+                <h2>Бухгалтерский учет</h2>
+                <div class="price-badge">от 3 000₽/мес</div>
+              </div>
+              <div class="card-body">
+                <ul>
+                  <li>Полное ведение бухгалтерии</li>
+                  <li>Восстановление учета</li>
+                  <li>Постановка бухгалтерского учета</li>
+                </ul>
+                <div class="service-description">
+                  <p>
+                    Профессиональное ведение бухгалтерского учета для ИП и
+                    ООО...
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <button class="card-button order-btn">Заказать</button>
+                  <button class="card-button details-btn" aria-expanded="false">Подробнее</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Налоговый учет -->
+            <div class="service-card" id="tax">
+              <div class="card-header">
+                <h2>Налоговый учет</h2>
+                <div class="price-badge">от 5 000₽/мес</div>
+              </div>
+              <div class="card-body">
+                <ul>
+                  <li>Налоговое планирование</li>
+                  <li>Оптимизация налогов</li>
+                  <li>Возмещение НДС</li>
+                  <li>Камеральные проверки</li>
+                </ul>
+                <div class="service-description">
+                  <p>
+                    Минимизация налоговой нагрузки законными способами. Помощь в
+                    налоговом планировании и сопровождение проверок.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <button class="card-button order-btn">Заказать</button>
+                  <button class="card-button secondary details-btn">
+                    Подробнее
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Кадровый учет -->
+            <div class="service-card" id="hr">
+              <div class="card-header">
+                <h2>Кадровый учет</h2>
+                <div class="price-badge">от 4 000₽/мес</div>
+              </div>
+              <div class="card-body">
+                <ul>
+                  <li>Ведение кадрового делопроизводства</li>
+                  <li>Расчет зарплаты</li>
+                  <li>Отчетность в фонды</li>
+                  <li>Кадровый аудит</li>
+                </ul>
+                <div class="service-description">
+                  <p>
+                    Полное кадровое сопровождение: от оформления сотрудников до
+                    расчета заработной платы и сдачи отчетности.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <button class="card-button order-btn">Заказать</button>
+                  <button class="card-button secondary details-btn">
+                    Подробнее
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Сдача отчетности -->
+            <div class="service-card" id="reporting">
+              <div class="card-header">
+                <h2>Сдача отчетности</h2>
+                <div class="price-badge">от 2 000₽/мес</div>
+              </div>
+              <div class="card-body">
+                <ul>
+                  <li>Подготовка налоговых деклараций</li>
+                  <li>Сдача отчетов в ФНС</li>
+                  <li>Отчетность в ПФР и ФСС</li>
+                  <li>Статистическая отчетность</li>
+                </ul>
+                <div class="service-description">
+                  <p>
+                    Своевременная подготовка и сдача всех видов отчетности в
+                    контролирующие органы.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <button class="card-button order-btn">Заказать</button>
+                  <button class="card-button secondary details-btn">
+                    Подробнее
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Консалтинг -->
+            <div class="service-card" id="consulting">
+              <div class="card-header">
+                <h2>Консалтинг</h2>
+                <div class="price-badge">от 5 000₽</div>
+              </div>
+              <div class="card-body">
+                <ul>
+                  <li>Консультации по бухучету</li>
+                  <li>Налоговые консультации</li>
+                  <li>Анализ финансовой деятельности</li>
+                  <li>Оптимизация бизнес-процессов</li>
+                </ul>
+                <div class="service-description">
+                  <p>
+                    Экспертные консультации по всем вопросам бухгалтерского и
+                    налогового учета для вашего бизнеса.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <button class="card-button order-btn">Заказать</button>
+                  <button class="card-button secondary details-btn">
+                    Подробнее
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Восстановление учета -->
+            <div class="service-card" id="recovery">
+              <div class="card-header">
+                <h2>Восстановление учета</h2>
+                <div class="price-badge">от 10 000₽</div>
+              </div>
+              <div class="card-body">
+                <ul>
+                  <li>Анализ текущего состояния учета</li>
+                  <li>Восстановление первичных документов</li>
+                  <li>Исправление ошибок в учете</li>
+                  <li>Сверка с контрагентами</li>
+                </ul>
+                <div class="service-description">
+                  <p>
+                    Профессиональное восстановление бухгалтерского и налогового
+                    учета при обнаружении ошибок или пропусков.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <button class="card-button order-btn">Заказать</button>
+                  <button class="card-button secondary details-btn">
+                    Подробнее
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальные окна для входа и регистрации -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>Вход в систему</h2>
+          <p>Введите свои данные для входа</p>
+        </div>
+        <form id="loginForm" class="modal-form">
+          <div class="form-group">
+            <label for="loginEmail">Email или телефон</label>
+            <input
+              type="text"
+              id="loginEmail"
+              placeholder="example@mail.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Пароль</label>
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="••••••••"
+              required
+            />
+            <div class="form-options">
+              <label class="checkbox-container">
+                <input type="checkbox" id="rememberMe" />
+                <span class="checkmark"></span>
+                Запомнить меня
+              </label>
+              <a href="#" class="forgot-password">Забыли пароль?</a>
+            </div>
+          </div>
+          <button type="submit" class="modal-btn">Войти</button>
+          <div class="modal-footer">
+            Ещё нет аккаунта?
+            <a href="#" class="switch-modal" data-modal="registerModal"
+              >Зарегистрироваться</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>Регистрация</h2>
+          <p>Создайте новый аккаунт</p>
+        </div>
+        <form id="registerForm" class="modal-form">
+          <div class="form-group">
+            <label for="regName">Имя</label>
+            <input type="text" id="regName" placeholder="Ваше имя" required />
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email</label>
+            <input type="email" id="regEmail" placeholder="example@mail.com" />
+          </div>
+          <div class="form-group">
+            <label for="regPhone">Телефон</label>
+            <input
+              type="tel"
+              id="regPhone"
+              placeholder="+7 (___) ___-__-__"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Пароль</label>
+            <input
+              type="password"
+              id="regPassword"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="regRepeatPassword">Повторите пароль</label>
+            <input
+              type="password"
+              id="regRepeatPassword"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <button type="submit" class="modal-btn">Зарегистрироваться</button>
+        </form>
+        <div class="modal-footer">
+          Уже есть аккаунт?
+          <a href="#" class="switch-modal" data-modal="loginModal">Войти</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-block">
+          <p class="footer-text">© 2025 BuhTech</p>
+          <div class="footer-social">
+            <p class="footer-text">Мы в соцсетях:</p>
+            <div class="social-icons">
+              <img src="./assets/vk.png" alt="Соцсеть 1" class="social-icon" />
+              <img src="./assets/tg2.png" alt="Соцсеть 2" class="social-icon" />
+              <img
+                src="./assets/whatsapp2.png"
+                alt="Соцсеть 3"
+                class="social-icon"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="footer-block">
+          <p class="footer-text">
+            г. Альметьевск, ул. Мира, 10<br />
+            <span class="work-hours"
+              >Пн-Пт: 09:00-17:00<br />Сб: 11:00-15:00</span
+            >
+          </p>
+        </div>
+        <div class="footer-block">
+          <p class="footer-text">
+            Техподдержка:<br />
+            <span class="footer-phone">+7 (000) 000-00-00</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <div class="bg-elements">
+      <div class="bg-circle bg-circle-1"></div>
+      <div class="bg-circle bg-circle-2"></div>
+      <div class="bg-circle bg-circle-3"></div>
+    </div>
+
+    <!-- Модальное окно подтверждения заказа -->
+    <div id="orderModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>Оформление заказа</h2>
+        </div>
+        <div class="modal-body">
+          <form id="orderForm" class="modal-form">
+            <div class="form-group">
+              <label for="orderService">Услуга</label>
+              <input type="text" id="orderService" readonly />
+            </div>
+            <div class="form-group">
+              <label for="orderPrice">Стоимость</label>
+              <input type="text" id="orderPrice" readonly />
+            </div>
+            <div class="form-group">
+              <label for="orderName">Ваше имя</label>
+              <input type="text" id="orderName" required />
+            </div>
+            <div class="form-group">
+              <label for="orderPhone">Телефон</label>
+              <input type="tel" id="orderPhone" required />
+            </div>
+            <div class="form-group">
+              <label for="orderEmail">Email</label>
+              <input type="email" id="orderEmail" />
+            </div>
+            <button type="submit" class="modal-btn">Подтвердить заказ</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Инициализация корзины
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const cartCount = document.getElementById("cartCount");
+        const cartBtn = document.getElementById("cartBtn");
+        const cartModal = document.getElementById("cartModal");
+        const closeCartModal = document.querySelector("#cartModal .close");
+        const cartItemsContainer = document.getElementById("cartItems");
+        const checkoutBtn = document.getElementById("checkoutBtn");
+
+        // Обновляем счетчик корзины
+        function updateCartCount() {
+          cartCount.textContent = cartItems.length;
+          localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        }
+
+        // Показываем корзину
+        function showCart() {
+          if (cartItems.length === 0) {
+            cartItemsContainer.innerHTML =
+              '<p class="cart-empty">Ваша корзина пуста.</p>';
+          } else {
+            let html = "";
+            let total = 0;
+
+            cartItems.forEach((item, index) => {
+              const price = parseInt(item.price.replace(/\D/g, ""));
+              total += price;
+
+              html += `
+            <div class="cart-item">
+              <div class="cart-item-name">${item.name}</div>
+              <div class="cart-item-price">${item.price}</div>
+              <div class="cart-item-remove" data-index="${index}">×</div>
+            </div>
+          `;
+            });
+
+            html += `
+          <div class="cart-total">
+            <span>Итого:</span>
+            <span>${total}₽</span>
+          </div>
+        `;
+
+            cartItemsContainer.innerHTML = html;
+
+            // Добавляем обработчики для кнопок удаления
+            document.querySelectorAll(".cart-item-remove").forEach((btn) => {
+              btn.addEventListener("click", function () {
+                const index = parseInt(this.getAttribute("data-index"));
+                cartItems.splice(index, 1);
+                updateCartCount();
+                showCart();
+              });
+            });
+          }
+        }
+
+        // Открытие/закрытие корзины
+        cartBtn.addEventListener("click", function () {
+          cartModal.style.display = "flex";
+          showCart();
+        });
+
+        closeCartModal.addEventListener("click", function () {
+          cartModal.style.display = "none";
+        });
+
+        window.addEventListener("click", function (event) {
+          if (event.target === cartModal) {
+            cartModal.style.display = "none";
+          }
+        });
+
+        // Оформление заказа
+        checkoutBtn.addEventListener("click", function () {
+          alert(
+            "Заказ оформлен! С вами свяжется наш менеджер для уточнения деталей."
+          );
+          cartItems = [];
+          updateCartCount();
+          showCart();
+          cartModal.style.display = "none";
+        });
+
+        // Функционал кнопки "Подробнее"
+        const detailsButtons = document.querySelectorAll(".details-btn");
+        detailsButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const card = this.closest(".service-card");
+            const description = card.querySelector(".service-description");
+
+            if (description.style.display === "block") {
+              description.style.display = "none";
+              this.textContent = "Подробнее";
+            } else {
+              description.style.display = "block";
+              this.textContent = "Скрыть";
+            }
+          });
+        });
+
+        // Функционал кнопки "Заказать"
+        const orderButtons = document.querySelectorAll(".order-btn");
+
+        orderButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const card = this.closest(".service-card");
+            const serviceName = card.querySelector("h2").textContent;
+            const servicePrice = card.querySelector(".price-badge").textContent;
+
+            // Проверяем, есть ли уже такая услуга в корзине
+            const isAlreadyInCart = cartItems.some(
+              (item) => item.name === serviceName
+            );
+
+            if (isAlreadyInCart) {
+              showNotification(`Услуга "${serviceName}" уже в корзине`);
+            } else {
+              // Добавляем услугу в корзину
+              cartItems.push({
+                name: serviceName,
+                price: servicePrice,
+              });
+
+              // Обновляем счетчик корзины
+              updateCartCount();
+
+              // Показываем уведомление
+              showNotification(`Услуга "${serviceName}" добавлена в корзину`);
+            }
+          });
+        });
+
+        // Функция для показа уведомления
+        function showNotification(message) {
+          const notification = document.createElement("div");
+          notification.className = "notification";
+          notification.textContent = message;
+
+          notification.style.position = "fixed";
+          notification.style.bottom = "20px";
+          notification.style.right = "20px";
+          notification.style.backgroundColor = "#98db03";
+          notification.style.color = "#39295a";
+          notification.style.padding = "15px 25px";
+          notification.style.borderRadius = "8px";
+          notification.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+          notification.style.zIndex = "1000";
+          notification.style.animation = "fadeIn 0.3s ease";
+
+          document.body.appendChild(notification);
+
+          // Удаляем уведомление через 3 секунды
+          setTimeout(() => {
+            notification.style.animation = "fadeOut 0.3s ease";
+            setTimeout(() => {
+              notification.remove();
+            }, 300);
+          }, 3000);
+        }
+
+        // Добавляем стили для анимации
+        const style = document.createElement("style");
+        style.textContent = `
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; transform: translateY(0); }
+        to { opacity: 0; transform: translateY(20px); }
+      }
+    `;
+        document.head.appendChild(style);
+
+        // Инициализируем счетчик при загрузке
+        updateCartCount();
+      });
+
+  // Функция для прокрутки к выбранной услуге и раскрытия описания
+  function scrollToService() {
+    if (window.location.hash) {
+      const serviceId = window.location.hash.substring(1);
+      const serviceElement = document.getElementById(serviceId);
+      if (serviceElement) {
+        // Добавляем класс активности
+        serviceElement.classList.add('active-service');
+        
+        // Находим кнопку "Подробнее" и имитируем клик
+        const detailsBtn = serviceElement.querySelector('.details-btn');
+        const description = serviceElement.querySelector('.service-description');
+        
+        if (detailsBtn && description.style.display !== 'block') {
+          detailsBtn.click(); // Раскрываем описание
+        }
+        
+        // Прокручиваем к элементу с отступом от верха
+        setTimeout(() => {
+          serviceElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+        
+        // Подсвечиваем элемент на 3 секунды
+        setTimeout(() => {
+          serviceElement.classList.remove('active-service');
+        }, 3000);
+      }
+    }
+  }
+
+  // Вызываем при загрузке
+  scrollToService();
+  
+  // Обработчик изменения hash в URL
+  window.addEventListener('hashchange', scrollToService);
+
+  // Модифицируем обработчик кнопки "Подробнее"
+  const detailsButtons = document.querySelectorAll('.details-btn');
+  detailsButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const card = this.closest('.service-card');
+      const description = card.querySelector('.service-description');
+      
+      if (description.style.display === 'block') {
+        description.style.display = 'none';
+        this.textContent = 'Подробнее';
+      } else {
+        description.style.display = 'block';
+        this.textContent = 'Скрыть';
+        
+        // Добавляем плавное появление
+        description.style.animation = 'fadeIn 0.3s ease';
+      }
+    });
+  });
+
+        // Закрытие модального окна
+        orderModal
+          .querySelector(".close")
+          .addEventListener("click", function () {
+            orderModal.style.display = "none";
+          });
+
+        // Обработка формы заказа
+        orderForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Здесь можно добавить отправку данных на сервер
+          const serviceName = document.getElementById("orderService").value;
+
+          // Показываем уведомление
+          showNotification(
+            `Заказ на услугу "${serviceName}" отправлен! Мы свяжемся с вами в ближайшее время.`
+          );
+
+          // Закрываем модальное окно
+          orderModal.style.display = "none";
+
+          // Очищаем форму
+          orderForm.reset();
+        });
+
+        // Закрытие при клике вне окна
+        window.addEventListener("click", function (event) {
+          if (event.target === orderModal) {
+            orderModal.style.display = "none";
+          }
+        });
+
+          // Функция для управления отображением описания
+  function toggleServiceDescription(button) {
+    const card = button.closest('.service-card');
+    const description = card.querySelector('.service-description');
+    const isExpanded = description.style.display === 'block';
+
+    if (isExpanded) {
+      description.style.display = 'none';
+      button.textContent = 'Подробнее';
+      button.setAttribute('aria-expanded', 'false');
+    } else {
+      description.style.display = 'block';
+      button.textContent = 'Скрыть';
+      button.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // Обработчики для кнопок "Подробнее"
+  document.querySelectorAll('.details-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      toggleServiceDescription(this);
+    });
+  });
+
+  // Обновленная функция для прокрутки к услуге
+  function scrollToService() {
+    if (window.location.hash) {
+      const serviceId = window.location.hash.substring(1);
+      const serviceElement = document.getElementById(serviceId);
+      
+      if (serviceElement) {
+        // Раскрываем описание
+        const detailsBtn = serviceElement.querySelector('.details-btn');
+        const description = serviceElement.querySelector('.service-description');
+        
+        if (detailsBtn && description.style.display !== 'block') {
+          toggleServiceDescription(detailsBtn);
+        }
+
+        // Прокручиваем к элементу
+        setTimeout(() => {
+          serviceElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+
+        // Подсвечиваем элемент
+        serviceElement.classList.add('active-service');
+        setTimeout(() => {
+          serviceElement.classList.remove('active-service');
+        }, 3000);
+      }
+    }
+  }
+
+  // Вызываем при загрузке
+  scrollToService();
+  
+  // Обработчик изменения hash в URL
+  window.addEventListener('hashchange', scrollToService);
+
+    </script>
+
+    <!-- Модальное окно корзины -->
+    <div id="cartModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>Корзина</h2>
+        </div>
+        <div class="modal-body" id="cartItems">
+          <p class="cart-empty">Ваша корзина пуста.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn" id="checkoutBtn">Оформить заказ</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

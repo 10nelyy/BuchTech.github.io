@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>BuchTech — Новости и статьи</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header-wrap">
+    <div class="header">
+      <div class="header-left">
+        <div class="nav-main">
+          <a href="index.html" class="nav-item home">Главная</a>
+          <div class="nav-item dropdown">
+            <a href="services.html" class="nav-item">Услуги <span class="dropdown-arrow">▼</span></a>
+            <div class="dropdown-content">
+              <a href="services.html#accounting">Бухгалтерский учет</a>
+              <a href="services.html#tax">Налоговый учет</a>
+              <a href="services.html#hr">Кадровый учет</a>
+              <a href="services.html#reporting">Сдача отчетности</a>
+              <a href="services.html#consulting">Консалтинг</a>
+              <a href="services.html#recovery">Восстановление учета</a>
+            </div>
+          </div>
+          <a href="about.html" class="nav-item">О нас</a>
+        </div>
+        <div class="nav-secondary">
+          <a href="news.html" class="nav-item active">Новости</a>
+          <a href="reviews.html" class="nav-item">Отзывы</a>
+          <a href="contacts.html" class="nav-item">Контакты</a>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="auth-buttons">
+          <button class="auth-button" data-modal-open="loginModal">
+            Войти
+          </button>
+          <button class="auth-button register-button" data-modal-open="registerModal">
+            Зарегистрироваться
+          </button>
+        </div>
+        <img src="./assets/кругляш.png" class="callback-icon" />
+        <a href="callback.html" class="callback-link">Обратный звонок</a>
+
+        <div class="cart-icon-block">
+          <button id="cartBtn" class="cart-btn">
+            <img src="./assets/cart.svg" alt="cart" class="cart-icon" />
+            <span id="cartCount" class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="content-wrap" style="padding-top: 40px; padding-bottom: 60px;">
+    <div class="services-container">
+      <h1 class="services-title" style="margin-bottom: 40px;">Новости и статьи</h1>
+
+      <div class="news-tabs">
+        <button class="tab-btn active" data-category="all">Все</button>
+        <button class="tab-btn" data-category="налоги">Налоги</button>
+        <button class="tab-btn" data-category="отчетность">Отчетность</button>
+        <button class="tab-btn" data-category="кадры">Кадры</button>
+        <button class="tab-btn" data-category="IT">IT</button>
+        <button class="tab-btn" data-category="мероприятия">Мероприятия</button>
+        <button class="tab-btn" data-category="автоматизация">Автоматизация</button>
+        <button class="tab-btn" data-category="выбор">Выбор</button>
+        <button class="tab-btn" data-category="НДС">НДС</button>
+        <button class="tab-btn" data-category="подписи">Подписи</button>
+      </div>
+
+      <div class="news-grid">
+        <div class="news-card" data-category="налоги">
+          <span class="news-date">31 мая 2025</span>
+          <span class="news-category">Налоги</span>
+          <h3 class="news-title">Изменения в налоговом кодексе с 1 июня 2025</h3>
+          <p class="news-excerpt">С 1 июня вступают в силу новые правила налогообложения для малого бизнеса. Основные изменения касаются упрощенной системы налогообложения.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="выбор">
+          <span class="news-date">28 мая 2025</span>
+          <span class="news-category">Выбор</span>
+          <h3 class="news-title">Как оптимизировать учет в малом бизнесе</h3>
+          <p class="news-excerpt">Практические советы по организации бухгалтерского учета для предпринимателей и малых предприятий.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="выбор">
+          <span class="news-date">25 мая 2025</span>
+          <span class="news-category">Выбор</span>
+          <h3 class="news-title">Тенденции рынка бухгалтерских услуг в 2025 году</h3>
+          <p class="news-excerpt">Аналитический обзор основных тенденций и перспектив развития рынка бухгалтерских услуг в текущем году.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="кадры">
+          <span class="news-date">22 мая 2025</span>
+          <span class="news-category">Кадры</span>
+          <h3 class="news-title">Новые требования к кадровому учету</h3>
+          <p class="news-excerpt">Разбираем изменения в трудовом законодательстве, которые вступили в силу в апреле 2025 года.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="мероприятия">
+          <span class="news-date">20 мая 2025</span>
+          <span class="news-category">Мероприятия</span>
+          <h3 class="news-title">Вебинар: Новые налоговые декларации</h3>
+          <p class="news-excerpt">Приглашаем на бесплатный вебинар, посвященный изменениям в формах налоговых деклараций на 2025 год.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="автоматизация">
+          <span class="news-date">18 мая 2025</span>
+          <span class="news-category">Автоматизация</span>
+          <h3 class="news-title">Автоматизация бухгалтерии: с чего начать</h3>
+          <p class="news-excerpt">Пошаговое руководство по внедрению автоматизации в бухгалтерский учет для небольших компаний.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="выбор">
+          <span class="news-date">15 мая 2025</span>
+          <span class="news-category">Выбор</span>
+          <h3 class="news-title">Бухгалтерские сервисы для фрилансеров</h3>
+          <p class="news-excerpt">Обзор лучших онлайн-сервисов для ведения учета и отчетности для самозанятых и фрилансеров.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="отчетность">
+          <span class="news-date">12 мая 2025</span>
+          <span class="news-category">Отчетность</span>
+          <h3 class="news-title">Изменения в отчетности за 1 квартал 2025</h3>
+          <p class="news-excerpt">Какие новые формы отчетности нужно сдавать за первый квартал 2025 года и как их правильно заполнить.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="IT">
+          <span class="news-date">10 мая 2025</span>
+          <span class="news-category">IT</span>
+          <h3 class="news-title">Новые налоговые льготы для IT-компаний</h3>
+          <p class="news-excerpt">С 1 апреля 2025 года вводятся дополнительные налоговые льготы для компаний, работающих в сфере информационных технологий.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="мероприятия">
+          <span class="news-date">8 мая 2025</span>
+          <span class="news-category">Мероприятия</span>
+          <h3 class="news-title">Семинар: Годовой отчет 2024</h3>
+          <p class="news-excerpt">Приглашаем на практический семинар по подготовке и сдаче годовой отчетности за 2024 год.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="выбор">
+          <span class="news-date">5 мая 2025</span>
+          <span class="news-category">Выбор</span>
+          <h3 class="news-title">Как выбрать бухгалтерскую компанию</h3>
+          <p class="news-excerpt">Критерии выбора бухгалтерского аутсорсинга: на что обратить внимание при выборе поставщика услуг.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="кадры">
+          <span class="news-date">3 мая 2025</span>
+          <span class="news-category">Кадры</span>
+          <h3 class="news-title">Новые правила расчета отпускных</h3>
+          <p class="news-excerpt">С 1 марта 2025 года изменяется порядок расчета отпускных выплат. Разбираем новые правила на примерах.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="НДС">
+          <span class="news-date">1 мая 2025</span>
+          <span class="news-category">НДС</span>
+          <h3 class="news-title">НДС в 2025 году: что изменилось</h3>
+          <p class="news-excerpt">Подробный разбор изменений в порядке исчисления и уплаты НДС, вступивших в силу с 1 марта 2025 года.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="подписи">
+          <span class="news-date">28 апреля 2025</span>
+          <span class="news-category">Подписи</span>
+          <h3 class="news-title">Электронные подписи для бухгалтера</h3>
+          <p class="news-excerpt">Какие электронные подписи нужны бухгалтеру в 2025 году и как их правильно оформить.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+
+        <div class="news-card" data-category="мероприятия">
+          <span class="news-date">25 апреля 2025</span>
+          <span class="news-category">Мероприятия</span>
+          <h3 class="news-title">Конференция "Бухучет 2025"</h3>
+          <p class="news-excerpt">Анонс главной отраслевой конференции года с участием ведущих экспертов в области бухгалтерского учета.</p>
+          <a href="#" class="news-link">Читать далее</a>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <button class="page-btn">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">4</button>
+        <button class="page-btn">5</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-block">
+        <p class="footer-text">© 2025 BuchTech</p>
+        <div class="footer-social">
+          <p class="footer-text">Мы в соцсетях:</p>
+          <div class="social-icons">
+            <img src="./assets/vk.png" alt="Соцсеть 1" class="social-icon" />
+            <img src="./assets/tg2.png" alt="Соцсеть 2" class="social-icon" />
+            <img src="./assets/whatsapp2.png" alt="Соцсеть 3" class="social-icon" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-block">
+        <p class="footer-text">
+          г. Альметьевск, ул. Мира, 10<br />
+          <span class="work-hours">Пн-Пт: 09:00-17:00<br />Сб: 11:00-15:00</span>
+        </p>
+      </div>
+
+      <div class="footer-block">
+        <p class="footer-text">
+          Техподдержка:<br />
+          <span class="footer-phone">+7 (000) 000-00-00</span>
+        </p>
+        <a href="index.html" class="back-to-top">
+          <span>Наверх</span>
+          <svg viewBox="0 0 20 20" fill="#39295a">
+            <path d="M10,5l8.66,7.5h-17.32z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div class="bg-elements">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-circle bg-circle-3"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const newsCards = document.querySelectorAll('.news-card');
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Удаляем класс active у всех кнопок
+          tabButtons.forEach(b => b.classList.remove('active'));
+          
+          // Добавляем класс active текущей кнопке
+          this.classList.add('active');
+          
+          const category = this.getAttribute('data-category');
+          
+          // Показываем/скрываем карточки в зависимости от категории
+          newsCards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+  <!-- Модальные окна для входа и регистрации -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-header">
+      <h2>Вход в систему</h2>
+      <p>Введите свои данные для входа</p>
+    </div>
+    <form id="loginForm" class="modal-form">
+      <div class="form-group">
+        <label for="loginEmail">Email или телефон</label>
+        <input type="text" id="loginEmail" placeholder="example@mail.com" required />
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Пароль</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" required />
+        <div class="form-options">
+          <label class="checkbox-container">
+            <input type="checkbox" id="rememberMe" />
+            <span class="checkmark"></span>
+            Запомнить меня
+          </label>
+          <a href="#" class="forgot-password">Забыли пароль?</a>
+        </div>
+      </div>
+      <button type="submit" class="modal-btn">Войти</button>
+      <div class="modal-footer">
+        Ещё нет аккаунта?
+        <a href="#" class="switch-modal" data-modal="registerModal">Зарегистрироваться</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-header">
+      <h2>Регистрация</h2>
+      <p>Создайте новый аккаунт</p>
+    </div>
+    <form id="registerForm" class="modal-form">
+      <div class="form-group">
+        <label for="regName">Имя</label>
+        <input type="text" id="regName" placeholder="Ваше имя" required />
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" placeholder="example@mail.com" />
+      </div>
+      <div class="form-group">
+        <label for="regPhone">Телефон</label>
+        <input type="tel" id="regPhone" placeholder="+7 (___) ___-__-__" required />
+      </div>
+      <div class="form-group">
+        <label for="regPassword">Пароль</label>
+        <input type="password" id="regPassword" placeholder="••••••••" required />
+      </div>
+      <div class="form-group">
+        <label for="regRepeatPassword">Повторите пароль</label>
+        <input type="password" id="regRepeatPassword" placeholder="••••••••" required />
+      </div>
+      <button type="submit" class="modal-btn">Зарегистрироваться</button>
+    </form>
+    <div class="modal-footer">
+      Уже есть аккаунт?
+      <a href="#" class="switch-modal" data-modal="loginModal">Войти</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
