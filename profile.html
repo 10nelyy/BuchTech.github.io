@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuchTech - Мой профиль</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header-wrap">
+    <div class="header">
+      <div class="header-left">
+        <div class="nav-main">
+          <a href="/" class="nav-item home">Главная</a>
+          <div class="dropdown">
+            <a href="services.html" class="nav-item">Услуги <span class="dropdown-arrow">▼</span></a>
+            <div class="dropdown-content">
+              <a href="services.html#accounting">Бухгалтерский учет</a>
+              <a href="services.html#tax">Налоговый учет</a>
+              <a href="services.html#hr">Кадровый учет</a>
+              <a href="services.html#reporting">Сдача отчетности</a>
+              <a href="services.html#consulting">Консалтинг</a>
+              <a href="services.html#recovery">Восстановление учета</a>
+            </div>
+          </div>
+          <a href="about.html" class="nav-item">О нас</a>
+        </div>
+        <div class="nav-secondary">
+          <a href="news.html" class="nav-item">Новости</a>
+          <a href="reviews.html" class="nav-item">Отзывы</a>
+          <a href="contacts.html" class="nav-item">Контакты</a>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="user-profile">
+          <span class="user-name" id="userName">Иван Иванов</span>
+          <img src="./assets/user-avatar.png" alt="Аватар" class="user-avatar">
+        </div>
+        <div class="cart-icon-block">
+          <button id="cartBtn" class="cart-btn">
+            <img src="./assets/cart.svg" alt="Корзина" class="cart-icon">
+            <span id="cartCount" class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Основное содержимое профиля -->
+  <div class="profile-container">
+    <div class="profile-sidebar">
+      <div class="profile-avatar">
+        <img src="./assets/user-avatar.png" alt="Аватар" id="profileAvatar">
+        <button class="change-avatar-btn">Изменить фото</button>
+      </div>
+      <nav class="profile-menu">
+        <a href="#personal" class="profile-menu-item active">Личные данные</a>
+        <a href="#orders" class="profile-menu-item">Мои заказы</a>
+        <a href="#services" class="profile-menu-item">Мои услуги</a>
+        <a href="#documents" class="profile-menu-item">Документы</a>
+        <a href="#settings" class="profile-menu-item">Настройки</a>
+        <button class="logout-btn">Выйти</button>
+      </nav>
+    </div>
+
+    <div class="profile-content">
+      <!-- Личные данные -->
+      <section id="personal" class="profile-section active">
+        <h2 class="section-title">Личные данные</h2>
+        <form class="profile-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="profileName">Имя</label>
+              <input type="text" id="profileName" value="Иван">
+            </div>
+            <div class="form-group">
+              <label for="profileSurname">Фамилия</label>
+              <input type="text" id="profileSurname" value="Иванов">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="profileEmail">Email</label>
+            <input type="email" id="profileEmail" value="ivan@example.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="profilePhone">Телефон</label>
+            <input type="tel" id="profilePhone" value="+7 (900) 123-45-67">
+          </div>
+          
+          <div class="form-group">
+            <label for="profileCompany">Компания</label>
+            <input type="text" id="profileCompany" value="ООО 'Ромашка'">
+          </div>
+          
+          <button type="submit" class="save-btn">Сохранить изменения</button>
+        </form>
+      </section>
+
+  <!-- Мои заказы - обновленная версия -->
+  <section id="orders" class="profile-section">
+    <h2 class="section-title">Мои заказы</h2>
+    <div class="orders-filter">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="completed">Завершенные</button>
+      <button class="filter-btn" data-filter="in-progress">В работе</button>
+      <button class="filter-btn" data-filter="cancelled">Отмененные</button>
+    </div>
+    <div class="orders-list">
+      <!-- Заказы будут добавляться динамически через JS -->
+    </div>
+    <div class="no-orders">У вас пока нет заказов</div>
+  </section>
+
+  <!-- Мои услуги - обновленная версия -->
+  <section id="services" class="profile-section">
+    <h2 class="section-title">Мои услуги</h2>
+    <div class="services-filter">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="active">Активные</button>
+      <button class="filter-btn" data-filter="paused">Приостановленные</button>
+      <button class="filter-btn" data-filter="completed">Завершенные</button>
+    </div>
+    <div class="services-list">
+      <!-- Услуги будут добавляться динамически через JS -->
+    </div>
+    <div class="no-services">У вас нет активных услуг</div>
+  </section>
+
+  <!-- Документы - обновленная версия -->
+  <section id="documents" class="profile-section">
+    <h2 class="section-title">Документы</h2>
+    <div class="documents-filter">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="contracts">Договоры</button>
+      <button class="filter-btn" data-filter="acts">Акты</button>
+      <button class="filter-btn" data-filter="invoices">Счета</button>
+    </div>
+    <div class="documents-list">
+      <!-- Документы будут добавляться динамически через JS -->
+    </div>
+    <div class="no-documents">Нет доступных документов</div>
+  </section>
+
+  <!-- Настройки - обновленная версия -->
+  <section id="settings" class="profile-section">
+    <h2 class="section-title">Настройки</h2>
+    <div class="settings-tabs">
+      <button class="tab-btn active" data-tab="notifications">Уведомления</button>
+      <button class="tab-btn" data-tab="security">Безопасность</button>
+      <button class="tab-btn" data-tab="danger">Опасная зона</button>
+    </div>
+    
+    <div class="settings-content">
+      <!-- Вкладка уведомлений -->
+      <div class="settings-tab active" id="notifications-tab">
+        <h3>Настройки уведомлений</h3>
+        <div class="setting-item">
+          <label class="switch">
+            <input type="checkbox" id="email-notifications" checked>
+            <span class="slider round"></span>
+          </label>
+          <span>Email-уведомления</span>
+        </div>
+        <div class="setting-item">
+          <label class="switch">
+            <input type="checkbox" id="sms-notifications">
+            <span class="slider round"></span>
+          </label>
+          <span>SMS-уведомления</span>
+        </div>
+        <div class="setting-item">
+          <label class="switch">
+            <input type="checkbox" id="browser-notifications" checked>
+            <span class="slider round"></span>
+          </label>
+          <span>Уведомления в браузере</span>
+        </div>
+        
+        <h3>Типы уведомлений</h3>
+        <div class="setting-item">
+          <label class="switch">
+            <input type="checkbox" id="notify-orders" checked>
+            <span class="slider round"></span>
+          </label>
+          <span>Новые заказы</span>
+        </div>
+        <div class="setting-item">
+          <label class="switch">
+            <input type="checkbox" id="notify-payments" checked>
+            <span class="slider round"></span>
+          </label>
+          <span>Платежи</span>
+        </div>
+        <div class="setting-item">
+          <label class="switch">
+            <input type="checkbox" id="notify-reports">
+            <span class="slider round"></span>
+          </label>
+          <span>Отчеты</span>
+        </div>
+      </div>
+      
+      <!-- Вкладка безопасности -->
+      <div class="settings-tab" id="security-tab">
+        <h3>Безопасность аккаунта</h3>
+        <div class="security-item">
+          <h4>Изменить пароль</h4>
+          <form class="password-form">
+            <div class="form-group">
+              <label for="current-password">Текущий пароль</label>
+              <input type="password" id="current-password" required>
+            </div>
+            <div class="form-group">
+              <label for="new-password">Новый пароль</label>
+              <input type="password" id="new-password" required>
+            </div>
+            <div class="form-group">
+              <label for="confirm-password">Подтвердите пароль</label>
+              <input type="password" id="confirm-password" required>
+            </div>
+            <button type="submit" class="save-btn">Изменить пароль</button>
+          </form>
+        </div>
+        
+        <div class="security-item">
+          <h4>Двухфакторная аутентификация</h4>
+          <div class="two-factor-status">
+            <span class="status-off">Выключена</span>
+            <button class="enable-2fa-btn">Включить</button>
+          </div>
+          <div class="two-factor-setup" style="display: none;">
+            <p>Отсканируйте QR-код с помощью приложения Google Authenticator:</p>
+            <div class="qr-code-placeholder"></div>
+            <p>Или введите код вручную: <strong>JBSWY3DPEHPK3PXP</strong></p>
+            <div class="form-group">
+              <label for="verification-code">Код подтверждения</label>
+              <input type="text" id="verification-code" placeholder="6-значный код">
+            </div>
+            <button class="verify-2fa-btn">Подтвердить</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Опасная зона -->
+      <div class="settings-tab" id="danger-tab">
+        <h3>Опасная зона</h3>
+        <div class="danger-item">
+          <h4>Экспорт данных</h4>
+          <p>Вы можете запросить архив со всеми вашими данными.</p>
+          <button class="export-data-btn">Запросить экспорт данных</button>
+        </div>
+        
+        <div class="danger-item">
+          <h4>Удаление аккаунта</h4>
+          <p>Это действие нельзя отменить. Все ваши данные будут удалены безвозвратно.</p>
+          <button class="delete-account-btn">Удалить аккаунт</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+  </div>
+
+  <!-- Футер (такой же как на главной) -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-block">
+        <p class="footer-text">© 2025 BuhTech</p>
+        <div class="footer-social">
+          <p class="footer-text">Мы в соцсетях:</p>
+          <div class="social-icons">
+            <img src="./assets/vk.png" alt="VK" class="social-icon">
+            <img src="./assets/tg2.png" alt="Telegram" class="social-icon">
+            <img src="./assets/whatsapp2.png" alt="WhatsApp" class="social-icon">
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-block">
+        <p class="footer-text">
+          г. Альметьевск, ул. Мира, 10<br />
+          <span class="work-hours">Пн-Пт: 09:00-17:00<br />Сб: 11:00-15:00</span>
+        </p>
+      </div>
+
+      <div class="footer-block">
+        <p class="footer-text">
+          Техподдержка:<br />
+          <span class="footer-phone">+7 (000) 000-00-00</span>
+        </p>
+        <a href="#" class="back-to-top">
+          <span>Наверх</span>
+          <svg viewBox="0 0 20 20" fill="#39295a">
+            <path d="M10,5l8.66,7.5h-17.32z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
