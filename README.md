@@ -1,1 +1,1 @@
-# BuchTech.github.io
+permalink: /index.html
